@@ -1,0 +1,43 @@
+h1 {
+    font-family: Brush Script MT;
+    font-size: 50px;
+    text-align: center;
+    color: lightcoral;
+}
+
+h2 {
+    font-family: Comic Sans MS;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 1px;
+}
+
+body {
+    background-image: url(skyBackground.jpg);
+    background-size: cover;
+    font-family: Comic Sans MS;
+    font-size: 13px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+}
+
+.page {
+    border: groove;
+    border-color: lemonchiffon;
+    width: 950px;
+    margin: auto;
+    background-color: whitesmoke;
+}
+
+.footer {
+    background-color: grey;
+    width: 932px;
+    margin: auto;
+    font-size: 12px;
+    color: black;
+    text-align: center;
+    padding: 9px;
+    border: groove;
+    border-color: lemonchiffon;
+}
