@@ -2,14 +2,15 @@ h1 {
     font-family: Brush Script MT;
     font-size: 50px;
     text-align: center;
-    color: lightcoral;
+    color:darkslateblue;
 }
 
-h2 {
+h3{
     font-family: Comic Sans MS;
-    font-size: 30px;
+    color: black;
+    font-size: 14px;
     text-align: center;
-    padding-top: 1px;
+    margin-top: auto;
 }
 
 body {
@@ -28,6 +29,14 @@ body {
     width: 950px;
     margin: auto;
     background-color: whitesmoke;
+}
+
+img.picture {
+    margin: 5px;
+    display: block;
+    height: 150px;
+    margin: auto;
+    margin-bottom: 50px;
 }
 
 .footer {

@@ -1,10 +1,10 @@
 function displayForm() {
-    var jmlhPilihan = document.getElementById("jmlhPilihan").value;
+    var jmlh = document.getElementById("jmlhPilihan2").value;
     var butt1;
     var choice = "";
 
-    for (var i = 1; i <= jmlhPilihan; i++) {
-        choice += "<p> Pilihan " + i + "<input placeholder = 'Masukkan Pilihan anda'>" + "</p>";
+    for (var i = 1; i <= jmlh; i++) {
+        choice += "<p> Pilihan " + i + " <input placeholder = 'Masukkan Pilihan anda'>" + "</p>";
     }
 
     butt1 = "<p>" + '<button onclick="createRadioButton()">OK</button>' + "</p";
@@ -13,48 +13,47 @@ function displayForm() {
 }
 
 function createRadioButton() {
-    var formulir = document.getElementById("pilihan1");
-    var inputan = formulir.getElementByTagName("input");
+    var form = document.getElementById("pilihan1");
+    var inputs = form.getElementsByTagName("input");
     var submit;
     var radios = "";
 
-    for (var i = 0; i < inputan.length; i++) {
-        if (inputan[i].type == "text") {
-            radios += '<input type = "radio" name = "option" value = "" + inputan[i].value >' + inputan[i].value + "<br>";
+    for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i].type == "text") {
+            radios += '<input type="radio" name="option" value="' + inputs[i].value + '">' + inputs[i].value + "<br>";
         }
     }
-
-    submit = 'input type="submit" value="Submit" onclick="getInput()">';
+    
+    submit = '\n' + '<input type="submit" value="Submit" onclick="getInput()">';
     document.getElementById("submit1").innerHTML = submit;
     list.innerHTML = radios;
 
 }
 
-function getInput(){
-    var nama = document.getElementById("Nama");
+function getInput() {
+    var name = document.getElementById("Nama");
     var form = document.querySelector("form");
-    var hasil = ducument.getElementById("hasil");
-    var jmlhPilihan = document.getElementById("jmlhPilihan").value;
-    var data = document.getElementById("pilihan1");
-    var inputan = data.getElementsByTagName("input");
+    var result = document.getElementById("hasil");
+    var bnykPilihan = document.getElementById("jmlhPilihan2").value;
+    var form1 = document.getElementById("pilihan1");
+    var inputan = form1.getElementsByTagName("input");
     var radios = "";
 
-    for(var i = 0; i < inputan.length; i++){
-        if(inputan[i].type == "text"){
-            radios += inputan[i].value + ",";
+    for (var i = 0; i < inputan.length; i++) {
+        if (inputan[i].type == "text") {
+            radios += inputan[i].value + ", ";
         }
     }
 
-    form.addEventListener("submit",function (event){
+    form.addEventListener("submit", function (event) {
         event.preventDefault();
-        var optionInput = document.querySelector('inputan[name="option"]:chekced');
+        var inputOption = document.querySelector('input[name="option"]:checked');
 
-        if(optionInput){ 
-            hasil.textContent = "Halo, nama saya " + nama.value + " saya mempunyai sejumlah " 
-            + jmlhPilihan.value + " pilihan yaitu " + radios + " dan saya memilih " + optionInput.value + ".";
-        }else{
-            hasil.textContent = "Pilih opsi"
+        if (inputOption) {
+            result.textContent = "Halo, nama saya " + name.value + ", saya mempunyai sejumlah " + 
+            bnykPilihan + " pilihan yaitu " + radios + "dan saya memilih " + inputOption.value + ".";
+        } else {
+            result.textContent = "Please select an option.";
         }
     });
 }
-
